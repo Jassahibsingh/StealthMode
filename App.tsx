@@ -8,9 +8,6 @@ import Shop from './screens/Shop';
 import MIicons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Alerts from './screens/Alerts';
 import Profile from './screens/Profile';
-// import CustomTabBar from './components/CustomBar';
-// import Screen3 from './screens/Screen3';
-// import Screen4 from './screens/Screen4';
 
 const home = 'Home';
 const shop = 'Shop';
@@ -43,13 +40,19 @@ const App = () => {
             return <MIicons name={iconName} size={size} color={color} />;
           },
           headerShown: false,
-        })}
-        tabBarOptions={{
-          activeTintColor: '#565656',
-          inactiveTintColor: 'grey',
-          labelStyle: {paddingBottom: 10, fontSize: 10},
-          style: {padding: 10, height: 70},
-        }}>
+          tabBarActiveTintColor: '#565656',
+          tabBarInactiveTintColor: 'grey',
+          tabBarLabelStyle: {
+            paddingBottom: 10,
+            fontSize: 10,
+          },
+          tabBarStyle: [
+            {
+              display: 'flex',
+            },
+            null,
+          ],
+        })}>
         <Tab.Screen name={home} component={Home} />
         <Tab.Screen name={shop} component={Shop} />
         <Tab.Screen name={alerts} component={Alerts} />
